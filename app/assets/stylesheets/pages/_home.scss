@@ -1,1 +1,72 @@
 // Specific CSS for your home-page
+.banner {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 300px);
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.home-buttons button {
+  color: white !important;
+  background-color: #6FD08C;
+  opacity: 0.9;
+  border-radius: 10px;
+  border-style: none;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 0;
+  &:hover {
+    color: #6FD08C;
+    opacity: 1;
+  }
+}
+
+.banner-two {
+  color: black;
+  text-align: center;
+  height: calc(100vh - 570px);
+  background-size: cover !important;
+}
+
+.banner-two-inner-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.home-card {
+  height: 175px;
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%);
+  color: black;
+  position: relative;
+  margin: 20px;
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+
