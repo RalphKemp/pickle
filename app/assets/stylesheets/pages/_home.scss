@@ -1,5 +1,7 @@
 // Specific CSS for your home-page
 .banner {
+  background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('work.jpg');
+  background-size: cover;
   color: white;
   text-align: center;
   height: calc(100vh - 300px);
@@ -9,23 +11,20 @@
   justify-content: center;
 }
 
-.home-buttons {
-  display: flex;
-  justify-content: space-around;
-}
-
 .home-buttons button {
-  color: white !important;
-  background-color: #6FD08C;
+  background-color: #525284;
   opacity: 0.9;
   border-radius: 10px;
   border-style: none;
   text-decoration: none;
   padding: 10px 15px;
-  margin: 0;
+  margin: 5px;
   &:hover {
     color: #6FD08C;
     opacity: 1;
+  }
+  & a {
+    color: white !important;
   }
 }
 
