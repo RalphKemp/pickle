@@ -27,13 +27,27 @@ html, body {
   text-decoration: none;
   padding: 10px 15px;
   margin: 5px;
+  outline: none;
   &:hover {
     color: #6FD08C;
     opacity: 1;
   }
   & a {
     color: white !important;
+    text-decoration: none;
+    outline: none;
   }
+}
+
+.button-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
 }
 
 .banner-two {
