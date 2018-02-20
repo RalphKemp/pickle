@@ -2,12 +2,22 @@
   <div class="banner-content">
     <h1>In a Pickle?</h1>
     <p>Find quick working people for sticky situations</p>
-    <a class="btn btn-primary btn-md">Look for workers</a>
-    <a class="btn btn-primary btn-md">Join Pickle</a>
+    <div class="home-buttons">
+        <button>
+          <%= link_to 'Log in', '#', "data-toggle" => "modal", "data-target"=>"#modaldeviselog" %>
+        </button>
+        <button>
+          <%= link_to 'Sign Up', '#', "data-toggle" => "modal", "data-target"=>"#modaldevisesign" %>
+        </button>
+        <div id="modaldeviselog" class="modal fade">
+          <%= render 'devise/sessions/new' %>
+        </div>
+        <div id="modaldevisesign" class="modal fade">
+          <%= render 'devise/registrations/new' %>
+        </div>
+    </div>
   </div>
 </div>
-
-
 
 <div class="banner-two">
   <h2>How we work</h2>

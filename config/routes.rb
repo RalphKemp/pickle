@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'pages#dashboard'
   resources :jobs
+
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
 
 end
