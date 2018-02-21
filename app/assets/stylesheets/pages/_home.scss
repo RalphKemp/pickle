@@ -1,6 +1,12 @@
 // Specific CSS for your home-page
-html, body {
-  height: 100%;
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.yield {
+  flex: 1;
 }
 
 .banner {
