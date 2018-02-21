@@ -1,0 +1,11 @@
+<ul>
+  <% @workers.each do |worker| %>
+  <li>
+    <%= worker.name %>
+    <%= worker.expertise %>
+    <%= worker.bio %>
+    <%= worker.location %>
+    <%= worker.available %>
+  </li>
+  <% end %>
+</ul>
