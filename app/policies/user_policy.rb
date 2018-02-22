@@ -5,17 +5,11 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-  def edit
-    user_is_owner_or_admin?
+  def edit?
+    record.user == user
   end
 
-  def user_dashboard
-    user_is_owner_or_admin?
-  end
-
-  private
-
-  def user_is_owner_or_admin?
-    record.user == user || user.admin
+  def user_dashboard?
+    record.user == user
   end
 end

@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
     authorize @user
   end
 
@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to dashboard_path
   end
-
 
   def user_dashboard
     @user = current_user
