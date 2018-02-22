@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_worker!, only: [:home]
 
   def home
     if user_signed_in?
@@ -7,7 +8,7 @@ class PagesController < ApplicationController
     end
   end
 
-  def dashboard
+  def user_dashboard
     @bookings = policy_scope(Booking)
     if user_signed_in?
       @user = current_user

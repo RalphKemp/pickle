@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :workers
-  devise_for :users
+  devise_for :workers, controllers: {
+    sessions: 'workers/sessions'
+  }
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   ActiveAdmin.routes(self)
   root to: 'pages#home'
-  get 'dashboard', to: 'pages#dashboard'
+  get 'dashboard', to: 'pages#user_dashboard'
 
   resources :bookings
 end
