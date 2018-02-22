@@ -1,13 +1,11 @@
 class WorkersController < ApplicationController
   before_action :set_worker, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @workers = Worker.all
   end
 
   def show
-
   end
 
   def new
@@ -24,7 +22,6 @@ class WorkersController < ApplicationController
   end
 
   def edit
-    @worker = Worker.find(params[:id])
   end
 
   def update
