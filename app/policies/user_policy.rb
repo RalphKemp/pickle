@@ -6,10 +6,10 @@ class UserPolicy < ApplicationPolicy
   end
 
   def edit?
-    record.user == user
+    record == user
   end
 
-  def user_dashboard?
-    record.user == user
+  def dashboard?
+    record == user
   end
 end

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def user_dashboard
+  def dashboard
     @user = current_user
     @bookings = @user.bookings
     authorize @user
