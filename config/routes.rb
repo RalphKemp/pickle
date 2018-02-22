@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :workers, controllers: {
+    sessions: 'workers/sessions'
+  }
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   ActiveAdmin.routes(self)
   root to: 'pages#home'
-  get 'dashboard', to: 'pages#dashboard'
-  resources :workers
+  get 'dashboard', to: 'users#dashboard'
+
   resources :bookings
-  devise_for :users
+  resources :users, only: [:show]
 end
 
 
