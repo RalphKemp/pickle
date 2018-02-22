@@ -1,1 +1,17 @@
 <p>dashboard!</p>
+
+
+<h3>my requests</h3>
+
+<ul>
+  <% @bookings.each do |booking| %>
+  <li>
+    <%= booking.name%>
+    <%= booking.description%>
+    <%= booking.price%>
+    <%= booking.urgency%>
+    <%= booking.category%>
+  </li>
+  <% end %>
+</ul>
+
