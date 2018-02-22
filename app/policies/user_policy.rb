@@ -1,19 +1,15 @@
-class BookingPolicy < ApplicationPolicy
+class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.where(user: user)
     end
   end
 
-  def create?
-    return true
-  end
-
-  def update?
+  def edit
     user_is_owner_or_admin?
   end
 
-  def destroy?
+  def user_dashboard
     user_is_owner_or_admin?
   end
 
@@ -22,5 +18,4 @@ class BookingPolicy < ApplicationPolicy
   def user_is_owner_or_admin?
     record.user == user || user.admin
   end
-
 end

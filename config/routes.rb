@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   }
   ActiveAdmin.routes(self)
   root to: 'pages#home'
-  get 'dashboard', to: 'pages#user_dashboard'
+  get 'dashboard', to: 'users#user_dashboard'
 
   resources :bookings
 end
