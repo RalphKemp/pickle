@@ -1,0 +1,11 @@
+<%= simple_form_for(@booking) do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :price%>
+  <%= f.input :urgency %>
+  <%= f.input :category %>
+  <%= f.input :photos %>
+  <%= f.button :submit %>
+
+<% end %>

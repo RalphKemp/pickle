@@ -1,11 +1,11 @@
 class WorkersController < ApplicationController
+  before_action :set_worker, only: [:show, :edit, :update, :destroy]
 
   def index
     @workers = Worker.all
   end
 
   def show
-    @worker = Worker.find(params[:id])
   end
 
   def new
@@ -22,7 +22,6 @@ class WorkersController < ApplicationController
   end
 
   def edit
-    @worker = Worker.find(params[:id])
   end
 
   def update
@@ -45,6 +44,10 @@ class WorkersController < ApplicationController
 
   def worker_params
     params.require(:worker).permit(:name, :description, :price, :urgency, :category)
+  end
+
+  def set_worker
+    @worker = Worker.find(params[:id])
   end
 
 

@@ -8,6 +8,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @bookings = policy_scope(Booking)
     if user_signed_in?
       @user = current_user
     else
