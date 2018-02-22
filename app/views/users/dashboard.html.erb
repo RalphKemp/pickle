@@ -1,24 +1,41 @@
-<p>dashboard!</p>
+<div class="dashboard-title">
+  <h2><%= @user.name %>'s dashboard</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-lg-6">
+      <div class="requests-box box">
+        <h6 class="box-title">My Requests</h6>
+        <ul>
+        <% @bookings.each do |booking| %>
+          <li>
+            <%= booking.name%>
+            <%= booking.description%>
+            <%= booking.price%>
+            <%= booking.urgency%>
+            <%= booking.category%>
+          </li>
+        <% end %>
+        </ul>
+        <% if policy(Booking).new? %>
+          <button>
+            <%= link_to 'create a new request', new_booking_path %>
+          </button>
+        <% end  %>
+      </div>
+    </div>
+    <div class="col-sm-12 col-lg-6">
+      <div class="active-jobs-box box">
+        <h6 class="box-title">Active jobs</h6>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<h3>my requests</h3>
 
-<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-    <%= booking.name%>
-    <%= booking.description%>
-    <%= booking.price%>
-    <%= booking.urgency%>
-    <%= booking.category%>
-  </li>
-  <% end %>
-</ul>
 
-<% if policy(Booking).new? %>
-  <button>
-    <%= link_to 'create a new request', new_booking_path %>
-  </button>
-<% end  %>
+
 
 
