@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'users#dashboard'
 
   resources :bookings
+  resources :users, only: [:show]
 end
 
 

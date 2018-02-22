@@ -1,29 +1,26 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  skip_after_action :verify_policy_scoped, only: :edit
+  before_action :set_user, only: [:show, :edit, :update, :dashboard]
+  skip_after_action :verify_authorized, only: [:show]
+
 
   def index
     @users = policy_scope(User).all
   end
 
   def show
-    @user = User.find(params[:id])
-    authorize @user
   end
 
   def edit
-    @user = current_user
     authorize @user
   end
 
   def update
-    @user = current_user
     @user.update(user_params)
     redirect_to dashboard_path
   end
 
   def dashboard
-    @user = current_user
     @bookings = @user.bookings
     authorize @user
   end
@@ -32,6 +29,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name)
+  end
+
+  def set_user
+    @user = current_user
   end
 
 end
