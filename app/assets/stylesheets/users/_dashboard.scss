@@ -4,13 +4,21 @@
 }
 
 .box {
-  height: 500px;
+  min-height: 200px;
   padding: 10px;
   margin: 20px;
   background-color: #dfc7e0;
+  border-radius: 10px;
 }
 
 .box-title {
   text-align: center;
   margin: 10px;
+}
+
+.single-request-box {
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
+
 }
