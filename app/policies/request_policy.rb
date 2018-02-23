@@ -1,4 +1,4 @@
-class BookingPolicy < ApplicationPolicy
+class RequestPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.where(user: user)

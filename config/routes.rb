@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'pages#home'
   get 'dashboard', to: 'users#dashboard'
+  get 'work', to: 'workers#work'
+  get 'about', to: 'pages#about'
 
-  resources :bookings
+  resources :requests, only: [:new, :create]
   resources :users, only: [:show]
+  resources :workers, only: [:show]
 end
 
 

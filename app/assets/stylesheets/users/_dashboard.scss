@@ -23,9 +23,12 @@
   margin: 10px;
 }
 
-.new-request-button a {
-  color: white;
-  &:hover {
+.new-request-button {
+  margin-bottom: 10px;
+  & a {
+    color: white;
+  }
+  & a:hover {
     text-decoration: none;
   }
 }
@@ -36,14 +39,17 @@
 
 .single-request-box {
   text-align: center;
-  padding: 25px;
+  padding: 10px 20px;
   border-radius: 10px;
-  margin: 5px 5px 25px 5px;
-  width: 50%;
+  margin: 5px;
+  width: 65%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   background-color: white;
+  &:last-child {
+    margin-bottom: 25px;
+  }
 }
 
 .single-request-box-secondary {
