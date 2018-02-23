@@ -1,5 +1,4 @@
 class WorkerPolicy < ApplicationPolicy
-
   attr_reader :worker, :record
 
   def initialize(worker, record)
@@ -7,7 +6,19 @@ class WorkerPolicy < ApplicationPolicy
     @record = record
   end
 
-  class Scope < Scope
+  def edit?
+    record == worker
+  end
+
+  def work?
+    record == worker
+  end
+
+  def scope
+    Pundit.policy_scope!(worker, record.class)
+  end
+
+  class Scope
     attr_reader :worker, :scope
 
     def initialize(worker, scope)
@@ -20,12 +31,8 @@ class WorkerPolicy < ApplicationPolicy
     end
   end
 
-   def edit?
-    record == worker
-  end
-
-  def work?
-    record == worker
-  end
-
 end
+
+
+
+

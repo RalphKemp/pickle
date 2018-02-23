@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard', to: 'users#dashboard'
   get 'work', to: 'workers#work'
+  get 'about', to: 'pages#about'
 
   resources :requests, only: [:new, :create]
   resources :users, only: [:show]
