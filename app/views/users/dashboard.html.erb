@@ -4,27 +4,36 @@
 
 <div class="dashboard-container">
   <div class="col-sm-12 col-lg-6">
-    <div class="requests-box box">
-      <h6 class="box-title">My Requests</h6>
-      <% @bookings.each do |booking| %>
-        <div class="single-request-box">
-          <%= booking.name%>
-          <%= booking.description%>
-          <%= booking.price%>
-          <%= booking.urgency%>
-          <%= booking.category%>
-        </div>
-      <% end %>
+    <div class="box">
+      <h5 class="box-title">My Requests</h5>
+      <div class="inner-box-content">
+        <% @bookings.each do |booking| %>
+          <div class="single-request-box">
+            <h6><%= booking.name%></h6>
+            <p><%= booking.description%></p>
+            <div class="single-request-box-secondary">
+             <p>Budget: <%= booking.price%></p>&nbsp
+             <p>Urgency: <%= booking.urgency%></p>&nbsp
+             <p>category: <%= booking.category%></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
       <% if policy(Booking).new? %>
-        <button>
-          <%= link_to 'create a new request', new_booking_path %>
-        </button>
+        <div class="new-request-button-container">
+          <button class="new-request-button btn btn-primary">
+            <%= link_to 'create a new request', new_booking_path %>
+          </button>
+        </div>
       <% end  %>
     </div>
   </div>
   <div class="col-sm-12 col-lg-6">
-    <div class="active-jobs-box box">
-      <h6 class="box-title">Active jobs accepted</h6>
+    <div class=" box">
+      <h5 class="box-title">Active jobs accepted</h5>
+      <div class="inner-box-content">
+        <!-- active jobs will go here from workers -->
+      </div>
     </div>
   </div>
 </div>

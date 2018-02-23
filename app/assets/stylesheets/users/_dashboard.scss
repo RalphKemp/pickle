@@ -11,14 +11,45 @@
   border-radius: 10px;
 }
 
+.inner-box-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .box-title {
   text-align: center;
   margin: 10px;
 }
 
+.new-request-button a {
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.new-request-button-container {
+  text-align: center;
+}
+
 .single-request-box {
   text-align: center;
-  padding: 5px;
-  margin: 5px;
+  padding: 25px;
+  border-radius: 10px;
+  margin: 5px 5px 10px 5px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: white;
+}
 
+.single-request-box-secondary {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  & p {
+    font-size: 12px;
+  }
 }
