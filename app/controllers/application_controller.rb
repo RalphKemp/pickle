@@ -22,7 +22,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    :authenticate_user! || :authenticate_worker!
+    if current_user
+      :authenticate_user!
+    elsif current_worker
+      :authenticate_worker!
+    end
   end
 
 end

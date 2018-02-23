@@ -9,7 +9,6 @@ class PagesController < ApplicationController
     if worker_signed_in?
       redirect_to about_path
     end
-
   end
 
   def about
