@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :requests, only: [:new, :create]
   resources :users, only: [:show]
-  resources :workers, only: [:show]
+  resources :workers, only: [:index, :show]
 end
 
 
