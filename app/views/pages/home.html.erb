@@ -46,3 +46,23 @@
     </div>
   </div>
 </div>
+
+<div class="banner-three">
+  <div class="want-to-work">
+    <h5>Want to work with us?</h5>
+  </div>
+  <div class="worker-buttons">
+    <button>
+      <%= link_to 'Log in', '#', "data-toggle" => "modal", "data-target"=>"#modaldeviselogworker" %>
+    </button>
+    <button>
+      <%= link_to 'Sign Up', '#', "data-toggle" => "modal", "data-target"=>"#modaldevisesignworker" %>
+    </button>
+    <div id="modaldeviselogworker" class="modal fade">
+      <%= render 'workers/sessions/new' %>
+    </div>
+    <div id="modaldevisesignworker" class="modal fade">
+      <%= render 'workers/registrations/new' %>
+      </div>
+  </div>
+</div>
