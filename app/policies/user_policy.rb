@@ -1,8 +1,12 @@
 class UserPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope
     end
+  end
+
+  def index?
+    true
   end
 
   def edit?
