@@ -36,14 +36,17 @@
 
 .single-request-box {
   text-align: center;
-  padding: 25px;
+  padding: 20px;
   border-radius: 10px;
-  margin: 5px 5px 25px 5px;
+  margin: 5px;
   width: 50%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   background-color: white;
+  &:last-child {
+    margin-bottom: 25px;
+  }
 }
 
 .single-request-box-secondary {
