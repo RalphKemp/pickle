@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
-    @bookings = @user.bookings
+    @requests = @user.requests
     authorize @user
   end
 

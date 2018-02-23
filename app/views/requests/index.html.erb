@@ -1,0 +1,12 @@
+
+<ul>
+  <% @requests.each do |request| %>
+  <li>
+    <%= request.name%>
+    <%= request.description%>
+    <%= request.price%>
+    <%= request.urgency%>
+    <%= request.category%>
+  </li>
+  <% end %>
+</ul>

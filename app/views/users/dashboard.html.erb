@@ -7,25 +7,25 @@
     <div class="box">
       <h5 class="box-title">My Requests</h5>
       <div class="inner-box-content">
-        <% @bookings.each do |booking| %>
+        <% @requests.each do |request| %>
           <div class="single-request-box">
-            <h6><%= booking.name%></h6>
-            <p><%= booking.description%></p>
+            <h6><%= request.name%></h6>
+            <p><%= request.description%></p>
             <div class="single-request-box-secondary">
-             <p>Budget: <%= booking.price%></p>&nbsp
-             <p>Urgency: <%= booking.urgency%></p>&nbsp
-             <p>category: <%= booking.category%></p>
+             <p>Budget: <%= request.price%></p>&nbsp
+             <p>Urgency: <%= request.urgency%></p>&nbsp
+             <p>category: <%= request.category%></p>
             </div>
           </div>
         <% end %>
       </div>
-      <% if policy(Booking).new? %>
+      <% if policy(Request).new? %>
         <div class="new-request-button-container">
           <button class="new-request-button btn btn-primary">
-            <%= link_to 'create a new request', new_booking_path %>
+            <%= link_to 'create a new request', new_request_path %>
           </button>
         </div>
-      <% end  %>
+      <% end %>
     </div>
   </div>
   <div class="col-sm-12 col-lg-6">
