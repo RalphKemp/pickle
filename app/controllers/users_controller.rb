@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :dashboard]
-  skip_after_action :verify_authorized, only: [:show]
+  skip_after_action :verify_authorized, only: [:index, :show]
 
 
   def index
     @users = policy_scope(User).all
+    @workers = @users.where(worker: true)
   end
 
   def show
