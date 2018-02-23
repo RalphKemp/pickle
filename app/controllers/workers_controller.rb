@@ -18,7 +18,7 @@ class WorkersController < ApplicationController
 
   def update
     @worker.update(worker_params)
-    redirect_to dashboard_path
+    redirect_to work_path
   end
 
   def work
