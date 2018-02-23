@@ -3,12 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      @user = current_user
-      if @user.worker
-        redirect_to about_path
-      elsif @user.customer
-        redirect_to dashboard_path
-      end
+      redirect_to dashboard_path
     end
   end
 

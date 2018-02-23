@@ -22,6 +22,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @user = current_user
     @requests = @user.requests
     authorize @user
   end
