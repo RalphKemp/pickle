@@ -3,6 +3,7 @@
 </div>
 
 <div class="dashboard-container">
+<% if @user.customer %>
   <div class="col-sm-12 col-lg-6">
     <div class="box">
       <h5 class="box-title">My Requests</h5>
@@ -19,23 +20,50 @@
           </div>
         <% end %>
       </div>
-      <% if policy(Request).new? %>
-        <div class="new-request-button-container">
-          <button class="new-request-button btn btn-primary">
-            <%= link_to 'create a new request', new_request_path %>
-          </button>
-        </div>
-      <% end %>
+    <% if policy(Request).new? %>
+      <div class="new-request-button-container">
+        <button class="new-request-button btn btn-primary">
+          <%= link_to 'create a new request', new_request_path %>
+        </button>
+      </div>
+    <% end %>
     </div>
   </div>
+
   <div class="col-sm-12 col-lg-6">
     <div class=" box">
-      <h5 class="box-title">Active jobs accepted</h5>
+      <h5 class="box-title">Active jobs accepted by worker</h5>
       <div class="inner-box-content">
-        <!-- active jobs will go here from workers -->
+        <button class="new-request-button btn btn-primary">
+        </button>
       </div>
     </div>
   </div>
+
+<% elsif @user.worker %>
+
+<div class="col-sm-12 col-lg-6">
+      <div class="box">
+        <h5 class="box-title">Unaccepted Requests</h5>
+        <div class="inner-box-content">
+
+       <!--  new requests from customers will go here -->
+
+        </div>
+      </div>
+  </div>
+
+  <div class="col-sm-12 col-lg-6">
+    <div class=" box">
+      <h5 class="box-title">Jobs You've accepted</h5>
+      <div class="inner-box-content">
+
+      <!-- accepted requests will go here -->
+
+      </div>
+    </div>
+  </div>
+<% end %>
 </div>
 
 
