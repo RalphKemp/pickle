@@ -1,6 +1,6 @@
 class WorkersController < ApplicationController
   before_action :authenticate_worker!
-  before_action :set_worker, only: [:show, :edit, :update, :dashboard]
+  before_action :set_worker, only: [:show, :edit, :update, :work]
   skip_after_action :verify_authorized, only: [:show]
 
 

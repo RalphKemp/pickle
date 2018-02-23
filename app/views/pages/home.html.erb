@@ -53,16 +53,10 @@
   </div>
   <div class="worker-buttons">
     <button>
-      <%= link_to 'Log in', '#', "data-toggle" => "modal", "data-target"=>"#modaldeviselogworker" %>
+      <%= link_to 'Log in', new_worker_session_path %>
     </button>
     <button>
-      <%= link_to 'Sign Up', '#', "data-toggle" => "modal", "data-target"=>"#modaldevisesignworker" %>
+      <%= link_to 'Sign Up', new_worker_registration_path %>
     </button>
-    <div id="modaldeviselogworker" class="modal fade">
-      <%= render 'workers/sessions/new' %>
-    </div>
-    <div id="modaldevisesignworker" class="modal fade">
-      <%= render 'workers/registrations/new' %>
-      </div>
   </div>
 </div>

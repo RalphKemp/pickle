@@ -1,7 +1,7 @@
 class WorkerPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(worker: worker)
+      scope.where(user: user)
     end
   end
 
