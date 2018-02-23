@@ -1,15 +1,17 @@
 class WorkerPolicy < ApplicationPolicy
+
+  attr_reader :worker, :record
   class Scope < Scope
     def resolve
-      scope.where(user: user)
+      scope.where(worker: worker)
     end
   end
 
   def edit?
-    record == user
+    record == worker
   end
 
   def work?
-    record == user
+    record == worker
   end
 end
