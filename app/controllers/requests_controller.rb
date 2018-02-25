@@ -3,13 +3,6 @@ class RequestsController < ApplicationController
 
   def index
     @requests = policy_scope(Request)
-    @users = User.all
-    @all_requests = []
-    @users.each do |user|
-      user.requests.each do |request|
-        @all_requests << request
-      end
-    end
   end
 
   def show

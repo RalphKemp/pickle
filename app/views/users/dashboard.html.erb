@@ -43,15 +43,24 @@
 
 <% elsif @user.worker %>
 
-<div class="col-sm-12 col-lg-6">
-      <div class="box">
-        <h5 class="box-title">Unaccepted Requests</h5>
-        <div class="inner-box-content">
-
-       <!--  new requests from customers will go here -->
-
-        </div>
+  <div class="col-sm-12 col-lg-6">
+    <div class="box">
+      <h5 class="box-title">Avaliable Requests</h5>
+      <div class="inner-box-content">
+        <% @all_requests.each do |request| %>
+          <div class="single-request-box">
+            <h6><%= request.name%></h6>
+            <h6><%= request.user.name%></h6>
+            <p><%= request.description%></p>
+            <div class="single-request-box-secondary">
+             <p>Budget: <%= request.price%></p>&nbsp
+             <p>Urgency: <%= request.urgency%></p>&nbsp
+             <p>category: <%= request.category%></p>
+            </div>
+          </div>
+        <% end %>
       </div>
+    </div>
   </div>
 
   <div class="col-sm-12 col-lg-6">
