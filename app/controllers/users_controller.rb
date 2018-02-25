@@ -26,6 +26,15 @@ class UsersController < ApplicationController
     @user = current_user
     @requests = @user.requests
     authorize @user
+
+    @users = User.all
+    @all_requests = []
+    @users.each do |user|
+      user.requests.each do |request|
+        @all_requests << request
+      end
+    end
+
   end
 
   private

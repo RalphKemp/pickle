@@ -6,7 +6,9 @@ class RequestPolicy < ApplicationPolicy
   end
 
   def create?
-    return true
+    if user.customer
+      return true
+    end
   end
 
   def update?
