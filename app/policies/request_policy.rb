@@ -1,12 +1,14 @@
 class RequestPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.where(user: user.customer)
+      scope.where(user: user)
     end
   end
 
   def create?
-    user_is_owner_or_admin?
+    if user.customer
+      return true
+    end
   end
 
   def update?
