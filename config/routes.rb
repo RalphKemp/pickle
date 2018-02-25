@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'workers', to: 'users#index'
 
-  resources :requests, only: [:index, :new, :create]
+  post 'book/:request_id/:id', to: 'pages#create_booking', as: 'create_booking'
+
+  resources :requests, only: [:index, :show, :new, :create]
   resources :users, only: [:show]
   resources :workers, only: [:index, :show]
 end
