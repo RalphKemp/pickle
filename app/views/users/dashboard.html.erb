@@ -70,9 +70,12 @@
     <div class=" box">
       <h5 class="box-title">Jobs You've accepted</h5>
       <div class="inner-box-content">
-
-      <!-- accepted requests will go here -->
-
+        <% @user.bookings.each do |booking| %>
+        <div class="single-request-box">
+          <h6><%= booking.user.name %></h6>
+          <p><%= booking.request.urgency %></p>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
