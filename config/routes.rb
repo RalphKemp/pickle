@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   get 'workers', to: 'users#index'
 
-  resources :requests, only: [:new, :create]
+  resources :requests, only: [:index, :new, :create]
   resources :users, only: [:show]
   resources :workers, only: [:index, :show]
 end
