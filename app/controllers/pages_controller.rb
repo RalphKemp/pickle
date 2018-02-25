@@ -12,9 +12,7 @@ class PagesController < ApplicationController
 
   def create_booking
     @booking = Booking.new
-    if current_user.worker
-      @user = current_user
-    end
+    @user = current_user
     @request = Request.find(params[:request_id])
     @booking.user = @user
     @booking.request = @request

@@ -51,7 +51,7 @@ class RequestsController < ApplicationController
   end
 
   def set_request
-    @request = request.find(params[:id])
+    @request = Request.find(params[:id])
     authorize @request
   end
 

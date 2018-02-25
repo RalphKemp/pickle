@@ -58,10 +58,7 @@
              <p>category: <%= request.category%></p>
             </div>
 
-            <button class="new-request-button btn btn-primary">
-              <%= link_to 'accept this request', create_booking_path(request, @user), method: :post %>
-            </button>
-
+              <%= link_to 'show', request_path(request) %>
 
           </div>
         <% end %>
