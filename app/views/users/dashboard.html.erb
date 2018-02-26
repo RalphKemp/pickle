@@ -8,7 +8,10 @@
     <div class="box">
       <h5 class="box-title">My Requests</h5>
       <div class="inner-box-content">
+
+
         <% @requests.each do |request| %>
+          <% unless request.accepted %>
           <div class="single-request-box">
             <h6><%= request.name%></h6>
             <p><%= request.description%></p>
@@ -18,25 +21,35 @@
              <p>category: <%= request.category%></p>
             </div>
           </div>
+          <% end %>
         <% end %>
-      </div>
 
+      </div>
       <div class="new-request-button-container">
         <button class="new-request-button btn btn-primary">
           <%= link_to 'create a new request', new_request_path %>
         </button>
       </div>
-
     </div>
   </div>
 
   <div class="col-sm-12 col-lg-6">
     <div class=" box">
-      <h5 class="box-title">Jobs Accepted</h5>
+      <h5 class="box-title">Jobs Accepted by our team</h5>
       <div class="inner-box-content">
-        <button class="new-request-button btn btn-primary">
-
-        </button>
+        <% @user.requests.each do |request| %>
+          <% if request.accepted %>
+            <div class="single-request-box">
+            <h6><%= request.name%></h6>
+            <p><%= request.description%></p>
+              <div class="single-request-box-secondary">
+               <p>Budget: <%= request.price%></p>&nbsp
+               <p>Urgency: <%= request.urgency%></p>&nbsp
+               <p>category: <%= request.category%></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -47,7 +60,7 @@
     <div class="box">
       <h5 class="box-title">Avaliable Requests</h5>
       <div class="inner-box-content">
-        <% @all_requests.each do |request| %>
+        <% @unaccepted_requests.each do |request| %>
           <div class="single-request-box">
             <h6><%= request.name%></h6>
             <h6><%= request.user.name%></h6>
@@ -57,6 +70,9 @@
              <p>Urgency: <%= request.urgency%></p>&nbsp
              <p>category: <%= request.category%></p>
             </div>
+              <button class="new-request-button btn btn-primary">
+                <%= link_to 'accept this request', create_booking_path(request, current_user), method: :post %>
+              </button>
           </div>
         <% end %>
       </div>
@@ -67,18 +83,17 @@
     <div class=" box">
       <h5 class="box-title">Jobs You've accepted</h5>
       <div class="inner-box-content">
-
-      <!-- accepted requests will go here -->
-
+        <% @user.bookings.each do |booking| %>
+        <div class="single-request-box">
+          <h6><%= booking.user.name %></h6>
+          <p><%= booking.request.urgency %></p>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
 <% end %>
 </div>
-
-
-
-
 
 
 

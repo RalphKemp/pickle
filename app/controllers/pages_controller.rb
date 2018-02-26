@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :about]
-
   def home
     if user_signed_in?
       redirect_to dashboard_path
@@ -8,5 +7,19 @@ class PagesController < ApplicationController
   end
 
   def about
+  end
+
+  def create_booking
+    @booking = Booking.new
+    @user = current_user
+    @request = Request.find(params[:request_id])
+    @booking.user = @user
+    @booking.request = @request
+
+    if @booking.save
+      @booking.update_attributes(accepted: true)
+      @booking.request.update_attributes(accepted: true)
+      redirect_to dashboard_path
+    end
   end
 end
