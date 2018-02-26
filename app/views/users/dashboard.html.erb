@@ -34,9 +34,7 @@
     <div class=" box">
       <h5 class="box-title">Jobs Accepted by our team</h5>
       <div class="inner-box-content">
-        <button class="new-request-button btn btn-primary">
 
-        </button>
       </div>
     </div>
   </div>
@@ -57,9 +55,9 @@
              <p>Urgency: <%= request.urgency%></p>&nbsp
              <p>category: <%= request.category%></p>
             </div>
-
-              <%= link_to 'show', request_path(request) %>
-
+              <button class="new-request-button btn btn-primary">
+                <%= link_to 'accept this request', create_booking_path(request, current_user), method: :post %>
+              </button>
           </div>
         <% end %>
       </div>
@@ -81,9 +79,6 @@
   </div>
 <% end %>
 </div>
-
-
-
 
 
 

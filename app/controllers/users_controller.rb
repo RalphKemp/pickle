@@ -31,7 +31,9 @@ class UsersController < ApplicationController
     @all_requests = []
     @users.each do |user|
       user.requests.each do |request|
-        @all_requests << request
+        if request.accepted == false
+          @all_requests << request
+        end
       end
     end
 
