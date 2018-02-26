@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :about]
-  # after_action :set_status
   def home
     if user_signed_in?
       redirect_to dashboard_path
@@ -23,11 +22,4 @@ class PagesController < ApplicationController
       redirect_to dashboard_path
     end
   end
-
-  private
-
-  # def set_status
-  #   @booking.request.accepted = true
-  #   @request.accepted = true
-  # end
 end

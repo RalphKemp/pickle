@@ -37,8 +37,8 @@ class UsersController < ApplicationController
       end
     end
 
-    #customer dashboard
-    @dash_requests = @requests.where(accepted: false)
+
+
 
 
   end

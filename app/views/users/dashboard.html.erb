@@ -9,7 +9,9 @@
       <h5 class="box-title">My Requests</h5>
       <div class="inner-box-content">
 
-        <% @dash_requests.each do |request| %>
+
+        <% @requests.each do |request| %>
+          <% unless request.accepted %>
           <div class="single-request-box">
             <h6><%= request.name%></h6>
             <p><%= request.description%></p>
@@ -19,6 +21,7 @@
              <p>category: <%= request.category%></p>
             </div>
           </div>
+          <% end %>
         <% end %>
 
       </div>
@@ -91,8 +94,6 @@
   </div>
 <% end %>
 </div>
-
-<% raise %>
 
 
 
