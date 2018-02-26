@@ -45,7 +45,7 @@
     <div class="box">
       <h5 class="box-title">Avaliable Requests</h5>
       <div class="inner-box-content">
-        <% @all_requests.each do |request| %>
+        <% @unaccepted_requests.each do |request| %>
           <div class="single-request-box">
             <h6><%= request.name%></h6>
             <h6><%= request.user.name%></h6>
@@ -79,6 +79,7 @@
   </div>
 <% end %>
 </div>
+
 
 
 

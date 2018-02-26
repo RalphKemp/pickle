@@ -28,12 +28,12 @@ class UsersController < ApplicationController
     authorize @user
 
     @users = User.all
-    @all_requests = []
+    @unaccepted_requests = []
     @users.each do |user|
       user.requests.each do |request|
-        if request.accepted == false
-          @all_requests << request
-        end
+      if request.accepted == false
+        return @unaccepted_requests << request
+      end
       end
     end
 
