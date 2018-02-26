@@ -8,7 +8,8 @@
     <div class="box">
       <h5 class="box-title">My Requests</h5>
       <div class="inner-box-content">
-        <% @requests.each do |request| %>
+
+        <% @dash_requests.each do |request| %>
           <div class="single-request-box">
             <h6><%= request.name%></h6>
             <p><%= request.description%></p>
@@ -19,14 +20,13 @@
             </div>
           </div>
         <% end %>
-      </div>
 
+      </div>
       <div class="new-request-button-container">
         <button class="new-request-button btn btn-primary">
           <%= link_to 'create a new request', new_request_path %>
         </button>
       </div>
-
     </div>
   </div>
 
@@ -34,7 +34,19 @@
     <div class=" box">
       <h5 class="box-title">Jobs Accepted by our team</h5>
       <div class="inner-box-content">
-
+        <% @user.requests.each do |request| %>
+          <% if request.accepted %>
+            <div class="single-request-box">
+            <h6><%= request.name%></h6>
+            <p><%= request.description%></p>
+              <div class="single-request-box-secondary">
+               <p>Budget: <%= request.price%></p>&nbsp
+               <p>Urgency: <%= request.urgency%></p>&nbsp
+               <p>category: <%= request.category%></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -80,7 +92,7 @@
 <% end %>
 </div>
 
-
+<% raise %>
 
 
 

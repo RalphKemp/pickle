@@ -26,16 +26,20 @@ class UsersController < ApplicationController
     @user = current_user
     @requests = @user.requests
     authorize @user
-
+    # for worker dashboard
     @users = User.all
     @unaccepted_requests = []
     @users.each do |user|
       user.requests.each do |request|
-      if request.accepted == false
-        return @unaccepted_requests << request
-      end
+        if request.accepted == false
+          return @unaccepted_requests << request
+        end
       end
     end
+
+    #customer dashboard
+    @dash_requests = @requests.where(accepted: false)
+
 
   end
 
