@@ -85,7 +85,7 @@
       <div class="inner-box-content">
         <% @user.bookings.each do |booking| %>
         <div class="single-request-box">
-          <h6><%= booking.user.name %></h6>
+          <h6><%= booking.request.user.name %></h6>
           <p><%= booking.request.urgency %></p>
         </div>
         <% end %>
