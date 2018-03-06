@@ -5,29 +5,21 @@
 <div class="dashboard-container">
 <% if @user.customer %>
   <div class="col-sm-12 col-lg-6">
-    <div class="box">
+    <div class="box" id="user-request-box">
       <h5 class="box-title">My Requests</h5>
-      <div class="inner-box-content">
-
+      <div class="inner-box-content" id="inner-box-content-id">
 
         <% @requests.each do |request| %>
           <% unless request.accepted %>
-          <div class="single-request-box">
-            <h6><%= request.name%></h6>
-            <p><%= request.description%></p>
-            <div class="single-request-box-secondary">
-             <p>Budget: <%= request.price%></p>&nbsp
-             <p>Urgency: <%= request.urgency%></p>&nbsp
-             <p>category: <%= request.category%></p>
-            </div>
-          </div>
+            <%= render request %>
           <% end %>
         <% end %>
 
       </div>
-      <div class="new-request-button-container">
+
+      <div class="new-request-button-container" id="user-new-request-button">
         <button class="new-request-button btn btn-primary">
-          <%= link_to 'create a new request', new_request_path %>
+          <%= link_to 'create a new request', new_request_path, remote: true %>
         </button>
       </div>
     </div>
@@ -40,7 +32,7 @@
         <% @user.requests.each do |request| %>
           <% if request.accepted %>
             <div class="single-request-box">
-            <h6><%= request.name%></h6>
+            <h6><%= link_to request.name, request_path(request)%></h6>
             <p><%= request.description%></p>
               <div class="single-request-box-secondary">
                <p>Budget: <%= request.price%></p>&nbsp
@@ -62,7 +54,7 @@
       <div class="inner-box-content">
         <% @unaccepted_requests.each do |request| %>
           <div class="single-request-box">
-            <h6><%= request.name%></h6>
+            <h6><%= request.name %></h6>
             <h6><%= request.user.name%></h6>
             <p><%= request.description%></p>
             <div class="single-request-box-secondary">
@@ -71,9 +63,10 @@
              <p>category: <%= request.category%></p>
             </div>
               <button class="new-request-button btn btn-primary">
-                <%= link_to 'accept this request', create_booking_path(request, current_user), method: :post %>
+                <%= link_to 'View Request Info', request_path(request)%>
               </button>
           </div>
+
         <% end %>
       </div>
     </div>
@@ -85,7 +78,7 @@
       <div class="inner-box-content">
         <% @user.bookings.each do |booking| %>
         <div class="single-request-box">
-          <h6><%= booking.request.user.name %></h6>
+          <h6><%= link_to booking.request.user.name, request_path(booking.request) %></h6>
           <p><%= booking.request.urgency %></p>
         </div>
         <% end %>
