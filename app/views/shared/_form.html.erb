@@ -1,11 +1,10 @@
-<%= simple_form_for(@request) do |f| %>
-
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :price%>
-  <%= f.input :urgency %>
-  <%= f.input :category %>
-
-  <%= f.button :submit %>
-
-<% end %>
+<div id="request-form">
+  <%= simple_form_for @request, remote: true do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price%>
+    <%= f.input :urgency %>
+    <%= f.input :category %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

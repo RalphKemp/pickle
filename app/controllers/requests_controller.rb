@@ -20,12 +20,17 @@ class RequestsController < ApplicationController
     if current_user.customer
       @request.user = current_user
     end
-    authorize @request
-    if @request.save
-      redirect_to dashboard_path
-    else
-      render :new
+    respond_to do |format|
+
+      if @request.save
+        format.html {redirect_to dashboard_path}
+        format.js
+      else
+        format.html {render :new}
+        format.js
+      end
     end
+    authorize @request
   end
 
   def edit

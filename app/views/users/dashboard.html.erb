@@ -5,29 +5,21 @@
 <div class="dashboard-container">
 <% if @user.customer %>
   <div class="col-sm-12 col-lg-6">
-    <div class="box">
+    <div class="box" id="user-request-box">
       <h5 class="box-title">My Requests</h5>
       <div class="inner-box-content">
 
 
         <% @requests.each do |request| %>
           <% unless request.accepted %>
-          <div class="single-request-box">
-            <h6><%= request.name%></h6>
-            <p><%= request.description%></p>
-            <div class="single-request-box-secondary">
-             <p>Budget: <%= request.price%></p>&nbsp
-             <p>Urgency: <%= request.urgency%></p>&nbsp
-             <p>category: <%= request.category%></p>
-            </div>
-          </div>
+          <%= render request %>
           <% end %>
         <% end %>
 
       </div>
-      <div class="new-request-button-container">
+      <div class="new-request-button-container" id="user-new-request-button">
         <button class="new-request-button btn btn-primary">
-          <%= link_to 'create a new request', new_request_path %>
+          <%= link_to 'create a new request', new_request_path, remote: true %>
         </button>
       </div>
     </div>
