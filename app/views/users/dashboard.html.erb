@@ -7,16 +7,16 @@
   <div class="col-sm-12 col-lg-6">
     <div class="box" id="user-request-box">
       <h5 class="box-title">My Requests</h5>
-      <div class="inner-box-content">
-
+      <div class="inner-box-content" id="inner-box-content-id">
 
         <% @requests.each do |request| %>
           <% unless request.accepted %>
-          <%= render request %>
+            <%= render request %>
           <% end %>
         <% end %>
 
       </div>
+
       <div class="new-request-button-container" id="user-new-request-button">
         <button class="new-request-button btn btn-primary">
           <%= link_to 'create a new request', new_request_path, remote: true %>

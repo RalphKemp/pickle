@@ -21,7 +21,6 @@ class RequestsController < ApplicationController
       @request.user = current_user
     end
     respond_to do |format|
-
       if @request.save
         format.html {redirect_to dashboard_path}
         format.js
