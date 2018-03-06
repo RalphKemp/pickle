@@ -1,6 +1,14 @@
 <%= @request.name %>
 
+<% unless @user.customer || @request.accepted %>
 <button class="new-request-button btn btn-primary">
   <%= link_to 'accept this request', create_booking_path(@request, current_user), method: :post %>
 </button>
+<%end %>
 
+<% if @user.worker %>
+
+  <% @user.bookings %>
+
+
+<%end %>
