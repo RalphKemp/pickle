@@ -3,8 +3,6 @@ require 'faker'
 User.destroy_all
 puts "destroying users"
 
-AdminUser.create!(email: 'ralph@kemp.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-
 puts "creating customers"
 
 counter = 1
