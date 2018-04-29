@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index]
   before_action :set_user, only: [:show, :edit, :update, :dashboard]
   skip_after_action :verify_authorized, only: [:index, :show]
 
