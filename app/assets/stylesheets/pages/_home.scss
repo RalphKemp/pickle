@@ -15,7 +15,7 @@ body {
 }
 
 .banner {
-  background: url('banner.jpg');
+  background-image: linear-gradient(rgba(255,255,255, 1), rgba(0,0,0,0.1)), url('banner.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
@@ -42,13 +42,27 @@ body {
 }
 
 .banner p {
-  font-size: 25px;
+  font-size: 18px;
   color: #636363;
   margin-bottom: 30px;
 }
 
-.banner-content {
-  margin-bottom: 98px;
+.banner-two {
+  color: black;
+  text-align: center;
+  background-size: cover !important;
+  & h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #4c4c4c;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.banner-two-inner-cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .home-buttons button, .worker-buttons button {
@@ -64,10 +78,11 @@ body {
     color: #6FD08C;
     opacity: 1;
   }
-  & a {
+  & p, a {
     color: white !important;
     text-decoration: none;
     outline: none;
+    margin-bottom: 0px !important;
   }
 }
 
@@ -82,35 +97,31 @@ body {
   opacity: 0;
 }
 
-.banner-two {
-  color: black;
-  text-align: center;
-  background-size: cover !important;
-}
-
-.banner-two-inner-cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .home-card {
-  height: 175px;
-  background-color: #525284;
-  opacity: 0.9;
-  color: black;
   position: relative;
-  margin: 20px;
+  margin: 15px;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
   & p {
     font-size: 14px;
     color: white;
   }
-  & h6 {
+  & h5 {
     color: white;
   }
+}
+
+#home-card-mob-1 {
+  background-color: #40a579;
+}
+
+#home-card-mob-2 {
+  background-color: #2c7757;
+}
+
+#home-card-mob-3 {
+  background-color: #144631;
+  margin-bottom: 37px;
 }
 
 .card-description {
@@ -130,6 +141,11 @@ body {
   flex-direction: column;
 }
 
+@media(min-width: 725px) {
+  .banner-content {
+    margin-bottom: 60px;
+  }
+}
 
 @media(min-width: 1050px) {
   .banner {
@@ -138,7 +154,11 @@ body {
     align-items: center;
     height: 100vh;
     & p {
-      font-size: 16px;
+      font-size: 20px;
+      color: #636363;
+    }
+    & h1 {
+      font-size: 40px;
     }
   }
 
@@ -154,11 +174,6 @@ body {
     display: block;
   }
 }
-
-
-
-
-
 
 
 
