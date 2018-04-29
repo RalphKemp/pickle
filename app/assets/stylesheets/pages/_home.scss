@@ -20,7 +20,7 @@ body {
   background-repeat: no-repeat;
   color: white;
   text-align: center;
-  height: 100%;
+  height: calc(100vh - 360px);
   background-size: cover !important;
   display: flex;
   align-items: center;
