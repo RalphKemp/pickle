@@ -21,6 +21,10 @@ body {
   justify-content: center;
 }
 
+.banner-content-two {
+  display: none;
+}
+
 .banner-content p {
   margin: none !important;
 }
@@ -59,7 +63,6 @@ body {
 .banner-two {
   color: black;
   text-align: center;
-  height: calc(100vh - 670px);
   background-size: cover !important;
 }
 
@@ -112,12 +115,44 @@ body {
   color: black;
   background-color: #355589;
   text-align: center;
-  height: calc(100vh - 770px);
   background-size: cover !important;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
+
+
+@media(min-width: 1050px) {
+  .banner {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    & p {
+      font-size: 16px;
+    }
+  }
+
+  .banner-content {
+    margin-left: 25px;
+  }
+
+  .banner-two {
+    display: none;
+  }
+
+  .banner-content-two {
+    display: block;
+  }
+}
+
+
+
+
+
+
+
+
 
 
