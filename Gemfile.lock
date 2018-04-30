@@ -198,7 +198,7 @@ DEPENDENCIES
   font-awesome-sass
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
-  nokogiri
+  nokogiri (= 1.8.1)
   pg (~> 0.21)
   pry-byebug
   pry-rails
@@ -218,4 +218,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.1
