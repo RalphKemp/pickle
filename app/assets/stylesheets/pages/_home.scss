@@ -150,6 +150,16 @@ body {
 }
 
 
+@media(max-width: 375px) {
+  .home-card {
+    max-width: 270px;
+    display: none;
+  }
+  .banner {
+    display:none;
+  }
+}
+
 @media(min-width: 520px) {
   .home-card {
     width: 360px;
