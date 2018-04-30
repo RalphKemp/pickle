@@ -153,15 +153,15 @@ body {
 @media(min-width: 520px) {
   .home-card {
     width: 360px;
-    height: 100px;
-    transition: all 0.2s ease;
+
+    padding: 15px;
+    transition: all 0.3s ease;
     & p {
       font-size: 13px;
       color: white;
     }
   }
 }
-
 
 @media(min-width: 725px) {
   .banner-content {
@@ -176,9 +176,9 @@ body {
   .home-card {
     width: 250px;
     height: 120px;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     & p {
-      font-size: 15px;
+      font-size: 13px;
       color: white;
     }
   }
@@ -187,6 +187,9 @@ body {
   }
   .banner-two {
     padding: 20px;
+  }
+  .banner h1 {
+    font-size: 36px;
   }
 }
 
@@ -197,11 +200,8 @@ body {
     align-items: center;
     height: 100vh;
     & p {
-      font-size: 20px;
+      font-size: 16px;
       color: #636363;
-    }
-    & h1 {
-      font-size: 40px;
     }
   }
 
@@ -216,10 +216,11 @@ body {
   .banner-content-two {
     display: block;
     transition: all 0.3s ease;
+    & h2 {
+      font-size: 36px;
+      font-style: bold;
+    }
   }
 }
-
-
-
 
 
