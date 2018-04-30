@@ -20,6 +20,7 @@ body {
   background-repeat: no-repeat;
   text-align: center;
   height: calc(100vh - 360px);
+  min-height: 350px;
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -153,10 +154,7 @@ body {
 @media(max-width: 375px) {
   .home-card {
     max-width: 270px;
-    display: none;
-  }
-  .banner {
-    display:none;
+    transition: all 0.3s ease;
   }
 }
 
