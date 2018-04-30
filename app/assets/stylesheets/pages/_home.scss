@@ -26,12 +26,16 @@ body {
   justify-content: center;
 }
 
+.banner-content {
+  transition: all 0.3s ease;
+}
+
 .banner-content-two {
   display: none;
 }
 
 .banner-content p {
-  margin: none !important;
+  margin: 0px 20px;
 }
 
 .banner h1 {
@@ -63,6 +67,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .home-buttons button, .worker-buttons button {
@@ -99,11 +104,14 @@ body {
 
 .home-card {
   position: relative;
-  margin: 15px;
+  margin: 17px;
   padding: 10px;
+  width: 315px;
+  height: 114px;
+  transition: all 0.3s ease;
   border-radius: 10px;
   & p {
-    font-size: 14px;
+    font-size: 13px;
     color: white;
   }
   & h5 {
@@ -141,9 +149,44 @@ body {
   flex-direction: column;
 }
 
+
+@media(min-width: 520px) {
+  .home-card {
+    width: 360px;
+    height: 100px;
+    transition: all 0.2s ease;
+    & p {
+      font-size: 13px;
+      color: white;
+    }
+  }
+}
+
+
 @media(min-width: 725px) {
   .banner-content {
     margin-bottom: 60px;
+  }
+}
+
+@media(min-width: 870px) {
+  .banner-two-inner-cards {
+    flex-direction: row;
+  }
+  .home-card {
+    width: 250px;
+    height: 120px;
+    transition: all 0.2s ease;
+    & p {
+      font-size: 15px;
+      color: white;
+    }
+  }
+  #home-card-mob-3 {
+    margin-bottom: 20px;
+  }
+  .banner-two {
+    padding: 20px;
   }
 }
 
@@ -172,6 +215,7 @@ body {
 
   .banner-content-two {
     display: block;
+    transition: all 0.3s ease;
   }
 }
 
