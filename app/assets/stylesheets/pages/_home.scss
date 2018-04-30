@@ -92,6 +92,10 @@ body {
   }
 }
 
+#sign-up-button {
+  background-color: #144631;
+}
+
 .button-link {
   position: absolute;
   top: 0;
@@ -144,7 +148,11 @@ body {
 }
 
 .banner-three {
+  background-image: linear-gradient(rgba(244,244,244, 1), rgba(0,0,0,0.1)), url('work.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
   color: black;
+  min-height: 200px;
   background-color: #355589;
   text-align: center;
   background-size: cover !important;
@@ -152,6 +160,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 30px;
 }
 
 
@@ -172,6 +181,9 @@ body {
       font-size: 13px;
       color: white;
     }
+  }
+  .banner-three {
+    flex-direction: row;
   }
 }
 
