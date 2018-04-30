@@ -93,7 +93,12 @@ body {
 }
 
 #sign-up-button {
-  background-color: #144631;
+  background-color: #2c7757;
+  font-size: 14px !important;
+}
+
+.want-to-work {
+  font-size: 16px !important;
 }
 
 .button-link {
@@ -181,9 +186,6 @@ body {
       font-size: 13px;
       color: white;
     }
-  }
-  .banner-three {
-    flex-direction: row;
   }
 }
 
