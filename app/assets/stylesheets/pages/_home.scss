@@ -130,6 +130,16 @@ body {
   }
 }
 
+.desktop-home-card {
+  width: 380px;
+  height: 100px;
+  padding: 5px;
+  margin: 15px 0px;
+  border-radius: 10px;
+  font-size: 12px !important;
+
+}
+
 #home-card-mob-1 {
   background-color: #40a579;
   opacity: 0;
@@ -144,6 +154,21 @@ body {
   background-color: #144631;
   opacity: 0;
   margin-bottom: 37px;
+}
+
+#home-card-desk-1 {
+ opacity: 0;
+ background-color: #f0f0f0;
+}
+
+#home-card-desk-2 {
+ opacity: 0;
+ background-color: #e5e5e5;
+}
+
+#home-card-desk-3 {
+ opacity: 0;
+ background-color: #cdcdcd;
 }
 
 .card-description {
@@ -214,7 +239,7 @@ body {
     padding: 20px;
   }
   .banner h1 {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 
@@ -225,13 +250,16 @@ body {
     align-items: center;
     height: 100vh;
     & p {
-      font-size: 16px;
-      color: #636363;
+      font-size: 14px;
     }
   }
 
   .banner-content {
     margin-left: 25px;
+    & p {
+      font-size: 16px;
+      color: #636363;
+    }
   }
 
   .banner-two {
@@ -242,9 +270,19 @@ body {
     display: block;
     transition: all 0.3s ease;
     & h2 {
-      font-size: 36px;
-      font-style: bold;
+      font-size: 24px;
+      font-weight: bold !important;
     }
+  }
+}
+
+@media(min-width: 1250px) {
+  .desktop-home-card {
+    transition: all 0.3s ease;
+    width: 390px;
+    height: 110px;
+    padding: 5px;
+    margin: 12px 0px;
   }
 }
 
