@@ -1,7 +1,12 @@
-var t1 = new TimelineLite();
-
 const cards = () => {
- t1.staggerTo(".home-card", 3, {
+ TweenMax.staggerTo(".home-card", 3, {
+    opacity:1,
+    ease:Elastic.easeOut
+  }, 0.3);
+}
+
+const reviews = () => {
+ TweenMax.staggerTo(".review-card", 3, {
     opacity:1,
     ease:Elastic.easeOut
   }, 0.3);
@@ -9,4 +14,5 @@ const cards = () => {
 
 setTimeout(function(){
   cards();
+  reviews();
 }, 500);
