@@ -137,13 +137,13 @@ body {
 // reviews
 
 .review-card {
-  background-color: #7e9f91;
+  background-color: #f0f0f0;
   opacity: 0;
   position: relative;
-  margin: 12px;
+  margin: 8px;
   padding: 10px;
   width: 315px;
-  height: 107px;
+  height: 100px;
   // transition: all 0.3s ease;
   border-radius: 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
@@ -151,12 +151,26 @@ body {
   justify-content: space-between;
   align-items: center;
   & p {
-    font-size: 13px;
+    font-size: 12px;
     color: #333333;
+    margin-bottom: 0px !important;
   }
   & h5 {
     color: #333333;
   }
+}
+
+#review-card-one, #review-card-three {
+  margin-right: 70px;
+}
+
+#review-card-three {
+  margin-right: 70px;
+  margin-bottom: 20px;
+}
+
+#review-card-two {
+  margin-left: 70px;
 }
 
 .review-user-pic {
@@ -187,7 +201,7 @@ body {
 .review-user-text {
   height: 80px;
   width: 130px;
-  padding: 20px;
+  padding: 5px;
 }
 
 // desktop home cards
